@@ -1,0 +1,63 @@
+---
+- name: Download SublimeText3
+  get_url:
+    url: http://download.sublimetext.com/sublime_text_3_build_{{ build }}_x64.tar.bz2
+    dest: "{{ tmp_path }}/{{ tmp_name }}"
+
+- name: Create install directory
+  file:
+    name: "{{ install_path }}"
+    state: directory
+
+- name: Unpack SublimeText3
+  unarchive:
+    src: "{{ tmp_path }}/{{ tmp_name }}"
+    dest: "{{ install_path }}"
+
+- name: Create link into /usr/local/bin (as `subl`)
+  file:
+    src: "{{ installed_path }}/sublime_text"
+    dest: /usr/local/bin/subl
+    state: link
+  become: yes
+  become_user: root
+
+- name: Create Installed Packages directory
+  file:
+    name: "{{ installed_packages }}"
+    state: directory
+
+- name: Install Package Control
+  get_url:
+    url: "http://packagecontrol.io/Package%20Control.sublime-package"
+    dest: "{{ installed_packages }}/Package Control.sublime-package"
+
+- name: Create Packages/User directory
+  file:
+    name: "{{ packages_user }}"
+    state: directory
+
+- name: Copy user Preferences
+  copy:
+    src: Preferences.sublime-settings
+    dest: "{{ packages_user }}/"
+
+- name: Copy user Package Control Preferences
+  copy:
+    src: "Package Control.sublime-settings"
+    dest: "{{ packages_user }}/"
+
+- name: Setup http_proxy
+  lineinfile:
+    dest: "{{ packages_user }}/Package Control.sublime-settings"
+    regexp: "http_proxy"
+    line: "    \"http_proxy\": \"{{ http_proxy }}\","
+    insertafter: "^\\{"
+
+- name: Setup https_proxy
+  lineinfile:
+    dest: "{{ packages_user }}/Package Control.sublime-settings"
+    regexp: "https_proxy"
+    line: "    \"https_proxy\": \"{{ https_proxy }}\","
+    insertafter: "^\\{"
+

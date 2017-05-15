@@ -1,0 +1,5 @@
+---
+- name: Git up
+  pip: name=git-up
+  become: yes
+  become_user: root

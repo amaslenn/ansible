@@ -1,0 +1,24 @@
+---
+- name: Check if perlbrew exists
+  shell: ~/perl5/perlbrew/bin/perlbrew list
+  ignore_errors: True
+  register: perls
+
+- debug: msg="Perls {{ perls['stdout_lines'] }} {{ perls }}"
+
+- name: Install perlbrew
+  shell: wget -O - http://install.perlbrew.pl | bash
+  when: "perls['rc']"
+
+- name: Source perlbrew to ~/.zshrc
+  lineinfile:
+    dest: ~/.zshrc
+    regexp: 'perlbrew'
+    line: 'source ~/perl5/perlbrew/etc/bashrc'
+
+- name: Install perl-5.22 (will take a while)
+  shell: source ~/perl5/perlbrew/etc/bashrc && perlbrew install perl-5.22.0 -Duseshrplib -Dusethreads
+  args:
+    executable: /bin/bash
+  when: "'5.22' not in perls['stdout']"
+

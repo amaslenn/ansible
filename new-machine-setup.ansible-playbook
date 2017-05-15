@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  # environment:
+  #   http_proxy:
+  #   https_proxy:
+
+  become_user: amaslenn
+
+  roles:
+    - role: packages
+      become: yes
+      become_user: root
+    - role: user
+      become: yes
+      become_user: root
+    - role: zsh
+      become: yes
+    # - role: perl
+    #   become: yes
+    - role: user-settings
+      become: yes
+    - role: sublime-text-3
+      become: yes
+    - role: python-extras
+      become: yes

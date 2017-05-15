@@ -1,0 +1,66 @@
+---
+- name: Install packages
+  package:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - cifs-utils
+    - vim
+    - git
+    - mc
+    - zsh
+    - tmux
+    - python-pip
+    - cmake
+    - openssh-server
+    - automake
+  become: yes
+  become_user: root
+
+- name: Install CentOS specific
+  package:
+    name: "{{ item }}"
+    state: installed
+  when: ansible_os_family == 'CentOS'
+  with_items:
+    - epel-release
+    - ntfs-3g
+    # for building git
+    - curl-devel
+    - expat-devel
+    - gettext-devel
+    - openssl-devel
+    - perl-devel
+    - zlib-devel
+    - asciidoc
+    - xmlto
+    - docbook2X
+  become: yes
+  become_user: root
+
+- name: Install "Development tools" (CentOS only)
+  yum:
+    name: "@Development tools"
+    state: installed
+  when: ansible_os_family == 'CentOS'
+  become: yes
+  become_user: root
+
+- name: Install Ubuntu specific
+  package:
+    name: "{{ item }}"
+    state: installed
+  when: ansible_os_family == 'Ubuntu'
+  with_items:
+    - build-essential
+    # for building git
+    - libcurl4-gnutls-dev
+    - libexpat1-dev
+    - gettext
+    - libz-dev
+    - libssl-dev
+    - asciidoc
+    - xmlto
+    - docbook2x
+  become: yes
+  become_user: root

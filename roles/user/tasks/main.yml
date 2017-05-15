@@ -1,0 +1,46 @@
+---
+- name: Make sure group 'wheel' exists
+  group:
+    name: wheel
+    state: present
+  sudo: yes
+
+- name: Make sure group 'sudo' exists
+  group:
+    name: sudo
+    state: present
+  sudo: yes
+
+- name: Allow group 'wheel' skip sudo pass
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '%wheel.*NOPASSWD'
+    line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+    validate: visudo -cf %s
+  sudo: yes
+
+- name: Create user
+  user:
+    name: amaslenn
+    shell: /bin/zsh
+    password: "{{ 'pass' | password_hash('sha512') }}"
+    force: yes
+    groups: "sudo,wheel"
+  sudo: yes
+
+- name: Keep values of LIBVA_DRIVERS_PATH and LIBVA_DRIVER_NAME for sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: 'LIBVA'
+    line: 'Defaults    env_keep += "LIBVA_DRIVERS_PATH LIBVA_DRIVER_NAME"'
+  sudo: yes
+
+- name: Keep values of proxies for sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: 'LIBVA'
+    line: 'Defaults    env_keep += "http_proxy https_proxy"'
+  sudo: yes

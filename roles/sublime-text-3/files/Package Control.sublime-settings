@@ -1,0 +1,14 @@
+{
+    "auto_upgrade": false,
+    "installed_packages":
+    [
+        "CMake",
+        "ColorSchemeSelector",
+        "Git",
+        "GitGutter",
+        "GitSavvy",
+        "MarkdownEditing",
+        "ModernPerl"
+    ]
+}
+
