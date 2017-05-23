@@ -50,7 +50,7 @@
   package:
     name: "{{ item }}"
     state: installed
-  when: ansible_os_family == 'Ubuntu'
+  when: ansible_os_family == 'Ubuntu' or ansible_os_family == 'Debian'
   with_items:
     - build-essential
     # for building git
