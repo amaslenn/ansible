@@ -19,4 +19,5 @@
     src: "~/.my-dotfiles-repo/{{ item }}"
     dest: "~/{{ item }}"
   with_items:
+    - '.gitconfig'
     - '.tmux.conf'
