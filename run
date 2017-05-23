@@ -1,1 +1,1 @@
-ansible-playbook -i "localhost," -c local new-machine-setup.ansible-playbook
+ansible-playbook -i "localhost," -c local $@ new-machine-setup.ansible-playbook
