@@ -14,11 +14,9 @@
       become: yes
       become_user: root
     - role: zsh
-      become: yes
     # - role: perl
     #   become: yes
     - role: user-settings
-      become: yes
     - role: sublime-text-3
       become: yes
     - role: python-extras
