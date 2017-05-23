@@ -1,0 +1,5 @@
+*.ansible-playbook	eol=lf
+*.yml	eol=lf
+*.conf	eol=lf
+*.tff	binary
+
