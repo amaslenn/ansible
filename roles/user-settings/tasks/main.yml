@@ -1,9 +1,4 @@
 ---
-- name: Update `.tmux.conf`
-  copy:
-    src: .tmux.conf
-    dest: ~/.tmux.conf
-
 - name: Install `monofur` font
   copy:
     src: "{{ item }}"
@@ -13,3 +8,15 @@
     - monof56.ttf
   become: yes
   become_user: root
+
+- name: Get my dotfiles
+  git:
+    repo: 'https://github.com/amaslenn/dotfiles.git'
+    dest: ~/.my-dotfiles-repo
+
+- name: Install my dotfiles
+  copy:
+    src: "~/.my-dotfiles-repo/{{ item }}"
+    dest: "~/{{ item }}"
+  with_items:
+    - '.tmux.conf'
