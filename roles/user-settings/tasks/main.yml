@@ -21,3 +21,4 @@
   with_items:
     - '.gitconfig'
     - '.tmux.conf'
+    - '.vimrc'
