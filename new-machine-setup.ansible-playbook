@@ -17,5 +17,7 @@
     - role: user-settings
       become: yes
       become_user: amaslenn
-    #- role: sublime-text-3
+    - role: sublime-text-3
+      become: yes
+      become_user: amaslenn
     - role: python-extras
