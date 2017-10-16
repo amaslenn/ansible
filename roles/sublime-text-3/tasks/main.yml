@@ -18,9 +18,11 @@
   copy:
     src: Preferences.sublime-settings
     dest: "{{ packages_user }}/"
+    force: no
 
 - name: Copy user Package Control Preferences
   copy:
     src: "Package Control.sublime-settings"
     dest: "{{ packages_user }}/"
+    force: no
 
