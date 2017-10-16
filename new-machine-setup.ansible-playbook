@@ -21,3 +21,8 @@
       become: yes
       become_user: amaslenn
     - role: python-extras
+      become: yes
+      become_user: root
+    - role: atom
+      become: yes
+      become_user: root

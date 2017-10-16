@@ -1,0 +1,11 @@
+---
+- name: Download Atom deb
+  when: ansible_os_family == 'Ubuntu' or ansible_os_family == 'Debian'
+  get_url:
+    url: https://atom.io/download/deb
+    dest: /tmp/atom_x64.deb
+
+- name: Install Atom
+  when: ansible_os_family == 'Ubuntu' or ansible_os_family == 'Debian'
+  apt:
+    deb: /tmp/atom_x64.deb
