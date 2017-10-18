@@ -39,6 +39,8 @@
     insertafter: EOF
     block: "{% raw %}
 
+      export TERM=xterm-256color
+
       setopt hist_ignore_all_dups
 
       alias hist='history | grep '
