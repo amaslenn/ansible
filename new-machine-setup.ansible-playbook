@@ -14,9 +14,11 @@
     - role: zsh
       become: yes
       become_user: amaslenn
+      tags: zsh
     - role: user-settings
       become: yes
       become_user: amaslenn
+      tags: user-settings
     - role: sublime-text-3
       become: yes
       become_user: amaslenn
