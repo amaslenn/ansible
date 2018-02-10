@@ -6,6 +6,7 @@
   with_items:
     - monof55.ttf
     - monof56.ttf
+  when: ansible_distribution != 'MacOSX'
   become: yes
   become_user: root
 
