@@ -62,6 +62,6 @@
     - asciidoc
     - xmlto
     - docbook2x
-    - sublime-text
+    - curl
   become: yes
   become_user: root
