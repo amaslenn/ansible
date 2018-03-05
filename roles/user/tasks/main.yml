@@ -29,14 +29,6 @@
     groups: "sudo,wheel"
   sudo: yes
 
-- name: Keep values of LIBVA_DRIVERS_PATH and LIBVA_DRIVER_NAME for sudo
-  lineinfile:
-    dest: /etc/sudoers
-    state: present
-    regexp: 'LIBVA'
-    line: 'Defaults    env_keep += "LIBVA_DRIVERS_PATH LIBVA_DRIVER_NAME"'
-  sudo: yes
-
 - name: Keep values of proxies for sudo
   lineinfile:
     dest: /etc/sudoers
