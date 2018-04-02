@@ -3,13 +3,15 @@
   group:
     name: wheel
     state: present
-  sudo: yes
+  become: yes
+  become_user: sudo
 
 - name: Make sure group 'sudo' exists
   group:
     name: sudo
     state: present
-  sudo: yes
+  become: yes
+  become_user: root
 
 - name: Allow group 'wheel' skip sudo pass
   lineinfile:
@@ -18,7 +20,8 @@
     regexp: '%wheel.*NOPASSWD'
     line: '%wheel ALL=(ALL) NOPASSWD: ALL'
     validate: visudo -cf %s
-  sudo: yes
+  become: yes
+  become_user: root
 
 - name: Create user
   user:
@@ -27,7 +30,8 @@
     password: "{{ 'pass' | password_hash('sha512') }}"
     force: yes
     groups: "sudo,wheel"
-  sudo: yes
+  become: yes
+  become_user: root
 
 - name: Keep values of proxies for sudo
   lineinfile:
@@ -35,4 +39,6 @@
     state: present
     regexp: 'LIBVA'
     line: 'Defaults    env_keep += "http_proxy https_proxy"'
-  sudo: yes
+  become: yes
+  become_user: root
+
