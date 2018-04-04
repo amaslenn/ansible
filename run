@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# --check   dry run mode
-# --tags    run tasks with specific tag
+# --check       dry run mode
+# --tags tag    run tasks with specific tag
 
 ansible-playbook -i "localhost," -c local $@ new-machine-setup.ansible-playbook
+

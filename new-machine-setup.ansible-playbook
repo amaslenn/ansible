@@ -1,30 +1,34 @@
 ---
 - hosts: localhost
-  # environment:
-  #   http_proxy:
-  #   https_proxy:
+  vars:
+    user_name: "{{ user_name | default('amaslenn') }}"
 
   roles:
     - role: packages
       become: yes
       become_user: root
+      tags: packages
+
     - role: user
       become: yes
       become_user: root
+      tags: new-user
+
     - role: zsh
       become: yes
       become_user: amaslenn
       tags: zsh
+
     - role: user-settings
       become: yes
       become_user: amaslenn
       tags: user-settings
+
     - role: sublime-text-3
       become: yes
       become_user: amaslenn
+
     - role: python-extras
       become: yes
       become_user: root
-    #- role: atom
-    #  become: yes
-    #  become_user: root
+
