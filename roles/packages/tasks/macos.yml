@@ -1,0 +1,35 @@
+---
+- name: Install terminal apps
+  homebrew:
+    name:
+      - zsh
+      - git
+      - hub
+      - gh
+      - ipython
+      - tmux
+      - shellcheck
+      - fzf
+      - ripgrep
+      - jq
+
+- name: Install GUI apps
+  homebrew_cask:
+    name:
+      - iterm2
+      - docker
+      - insomnia
+      - visual-studio-code
+    accept_external_apps: yes
+
+- name: Other tools & apps
+  homebrew_cask:
+    name:
+      - ilya-birman-typography-layout
+      - loom
+      - remembear
+      - slack
+      - zoomus
+      - transmission
+      - google-chrome
+    accept_external_apps: yes
