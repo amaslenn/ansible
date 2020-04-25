@@ -1,33 +1,8 @@
 ---
-- name: Install packages
-  package:
-    name: "{{ item }}"
-    state: installed
-  with_items:
-    - cifs-utils
-    - vim
-    - git
-    - mc
-    - zsh
-    - automake
-  become: yes
-  become_user: root
+- name: Include RHEL tasks
+  include: rhel.yml
+  when: ansible_os_family == "RedHat"
 
-- name: Install "Development tools" (CentOS only)
-  yum:
-    name: "@Development tools"
-    state: installed
-  when: ansible_os_family == 'CentOS'
-  become: yes
-  become_user: root
-
-- name: Install Ubuntu specific
-  package:
-    name: "{{ item }}"
-    state: installed
-  when: ansible_os_family == 'Ubuntu' or ansible_os_family == 'Debian'
-  with_items:
-    - build-essential
-    - curl
-  become: yes
-  become_user: root
+- name: Include Debian tasks
+  include: debian.yml
+  when: ansible_os_family == "Debian"

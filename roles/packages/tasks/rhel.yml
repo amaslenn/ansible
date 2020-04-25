@@ -1,0 +1,12 @@
+---
+- name: "[RHEL] packages"
+  package:
+    name: ["cifs-utils", "vim", "git", "mc", "zsh", "automake"]
+    state: present
+  become: yes
+
+- name: "[RHEL] Install 'Development tools'"
+  yum:
+    name: "@Development tools"
+    state: present
+  become: yes
