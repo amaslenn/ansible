@@ -1,6 +1,0 @@
-#!/bin/bash -eE
-
-# --check       dry run mode
-# --tags tag    run tasks with specific tag
-
-ansible-playbook -i localhost, -c local "$@" site.yml

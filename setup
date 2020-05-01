@@ -1,0 +1,16 @@
+#!/bin/bash -eE
+
+distro=$1
+
+if [ "x${distro}" = "x" ]; then
+    echo "USAGE: $0 <distro-type> [ansible-playbook opts]"
+    exit 1
+fi
+shift
+
+if [ ! -e "${distro}.yml" ]; then
+    echo "${distro}.yml doesn't exist"
+    exit 1
+fi
+
+ansible-playbook "$@" "${distro}.yml"
