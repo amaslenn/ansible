@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars:
+    user_name: "{{ user_name | default('amaslenn') }}"
+
+  roles:
+  - role: packages
+    tags: [packages]
+
+  - role: zsh
+    tags: [zsh]
