@@ -6,9 +6,8 @@
   with_items:
     - monof55.ttf
     - monof56.ttf
-  when: ansible_distribution != 'MacOSX'
+  when: ansible_os_family != "Darwin"
   become: yes
-  become_user: root
 
 - name: Get my dotfiles
   git:
@@ -29,4 +28,3 @@
 
 - name: Vim plugins
   shell: vim +'PlugInstall --sync' +qa
-
