@@ -13,24 +13,25 @@
       - ripgrep
       - jq
 
-- name: Install GUI apps
+- name: Install dev GUI apps
   homebrew_cask:
     name:
       - iterm2
       - docker
       - insomnia
       - visual-studio-code
-      - keka
     accept_external_apps: yes
 
 - name: Other tools & apps
   homebrew_cask:
     name:
-      - ilya-birman-typography-layout
+      # - ilya-birman-typography-layout — fails when already installed
       - loom
-      - remembear
+      # - remembear — there is no cask for it :(
       - slack
       - zoomus
       - transmission
       - google-chrome
+      - keka
+      - dropbox
     accept_external_apps: yes
