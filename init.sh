@@ -12,7 +12,8 @@ fi
 
 if echo "$OSTYPE" | grep -i darwin; then
     brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    brew install ansible
+    ansible --version || brew install ansible
+    ansible-galaxy install -r requirements.yml
     exit 0
 fi
 

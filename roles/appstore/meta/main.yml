@@ -1,0 +1,7 @@
+---
+dependencies:
+- role: geerlingguy.mas
+  vars:
+    mas_installed_apps:
+      - id: 1274495053
+        name: Microsoft To Do
