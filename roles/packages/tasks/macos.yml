@@ -20,6 +20,7 @@
       - docker
       - insomnia
       - visual-studio-code
+      - keka
     accept_external_apps: yes
 
 - name: Other tools & apps
