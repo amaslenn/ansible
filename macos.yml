@@ -15,3 +15,6 @@
 
   - role: dotfiles
     tags: [dotfiles]
+
+  - role: vim
+    tags: [vim]

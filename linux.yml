@@ -15,6 +15,9 @@
   - role: dotfiles
     tags: [dotfiles]
 
+  - role: vim
+    tags: [vim]
+
   - role: user-settings
     become: yes
     become_user: amaslenn
