@@ -1,0 +1,15 @@
+---
+- name: Get my dotfiles
+  git:
+    repo: 'https://github.com/amaslenn/dotfiles.git'
+    dest: ~/.my-dotfiles-repo
+
+- name: Install my dotfiles
+  file:
+    src: "~/.my-dotfiles-repo/{{ item }}"
+    dest: "~/{{ item }}"
+    state: link
+  loop:
+    - '.gitconfig'
+    - '.tmux.conf'
+    - '.vimrc'

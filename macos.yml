@@ -12,3 +12,6 @@
 
   - role: appstore
     tags: [appstore]
+
+  - role: dotfiles
+    tags: [dotfiles]

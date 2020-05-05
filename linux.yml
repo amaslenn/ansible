@@ -12,6 +12,9 @@
     #   become_user: amaslenn
     #   tags: zsh
 
+  - role: dotfiles
+    tags: [dotfiles]
+
   - role: user-settings
     become: yes
     become_user: amaslenn

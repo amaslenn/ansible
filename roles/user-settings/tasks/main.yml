@@ -9,20 +9,6 @@
   when: ansible_os_family != "Darwin"
   become: yes
 
-- name: Get my dotfiles
-  git:
-    repo: 'https://github.com/amaslenn/dotfiles.git'
-    dest: ~/.my-dotfiles-repo
-
-- name: Install my dotfiles
-  copy:
-    src: "~/.my-dotfiles-repo/{{ item }}"
-    dest: "~/{{ item }}"
-  with_items:
-    - '.gitconfig'
-    - '.tmux.conf'
-    - '.vimrc'
-
 - name: VimPlug
   shell: 'curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
