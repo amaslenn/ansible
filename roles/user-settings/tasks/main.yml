@@ -8,3 +8,7 @@
     - monof56.ttf
   when: ansible_os_family != "Darwin"
   become: yes
+
+- name: Include MacOS tasks
+  include: macos.yml
+  when: ansible_os_family == "Darwin"

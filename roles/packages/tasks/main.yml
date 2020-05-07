@@ -7,6 +7,6 @@
   include: debian.yml
   when: ansible_os_family == "Debian"
 
-- name: Include Debian tasks
+- name: Include MacOS tasks
   include: macos.yml
   when: ansible_os_family == "Darwin"

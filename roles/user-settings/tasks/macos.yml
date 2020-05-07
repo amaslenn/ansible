@@ -1,0 +1,6 @@
+---
+- name: MacOS settings
+  shell: |
+    set -eE
+    # enable key repeate in VS Code
+    defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
