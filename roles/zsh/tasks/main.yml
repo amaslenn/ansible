@@ -52,6 +52,11 @@
     regexp: 'ZSH_THEME'
     line: 'ZSH_THEME="bureau-am/bureau-am"'
 
+- name: Install tmux tpm
+  git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: ~/.tmux/plugins/tpm
+
 - name: Enable plugins
   lineinfile:
     dest: ~/.zshrc
