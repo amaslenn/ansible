@@ -7,20 +7,13 @@
   - role: packages
     tags: [packages]
 
-    # - role: zsh
-    #   become: yes
-    #   become_user: amaslenn
-    #   tags: zsh
-
-  - role: dotfiles
-    tags: [dotfiles]
+  - role: zsh
 
   - role: vim
     tags: [vim]
 
-  - role: zsh
+  - role: dotfiles
+    tags: [dotfiles]
 
   - role: user-settings
-    become: yes
-    become_user: amaslenn
     tags: user-settings
