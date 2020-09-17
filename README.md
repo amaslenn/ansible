@@ -9,6 +9,9 @@ Playbook to set up new Linux/MacOS machine the way I like.
 # generate ssh keys
 ssh-keygen -t rsa -b 4096 -C "email@example.com
 cat ~/.ssh/id_rsa.pub | clip.exe
+
+# use Windows' Git credential manager in WSL:
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
 ```
 
 ## TODO
