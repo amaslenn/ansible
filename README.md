@@ -12,5 +12,5 @@ cat ~/.ssh/id_rsa.pub | clip.exe
 ```
 
 ## TODO
-[ ] `sudo update-alternatives --install /usr/bin/python python $(realpath $(which python3)) 1`
-[ ] `update-alternatives --list python`
+- [ ] `sudo update-alternatives --install /usr/bin/python python $(realpath $(which python3)) 1`
+- [ ] `update-alternatives --list python`
