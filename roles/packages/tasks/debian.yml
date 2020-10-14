@@ -7,6 +7,6 @@
 
 - name: "[Debian] more packages"
   package:
-    name: ["build-essential", "curl"]
+    name: ["build-essential", "curl", "tree", "ripgrep"]
     state: present
   become: yes
