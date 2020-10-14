@@ -53,7 +53,7 @@
                 // "fontFace": "Source Code Pro",
                 "fontFace": "Cascadia Code PL",
                 // "fontFace": "Monofur",
-                "fontSize": 13,
+                "fontSize": 12,
                 "cursorShape": "filledBox",
                 "cursorColor": "#aaaaaa",
                 "useAcrylic": true,
