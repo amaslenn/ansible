@@ -15,5 +15,9 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 ```
 
 ## TODO
-- [ ] `sudo update-alternatives --install /usr/bin/python python $(realpath $(which python3)) 1`
-- [ ] `update-alternatives --list python`
+- [ ] `sudo update-alternatives --install /usr/bin/python python $(realpath $(which python3)) 1`  
+      `update-alternatives --list python`
+- [ ] `sudo apt install python3-pip`  
+      `sudo update-alternatives --install /usr/bin/pip pip $(realpath $(which pip3)) 1`  
+      `update-alternatives --list python`
+- [ ] Install `virtualenvwrapper` (`pip install virtualenvwrapper`, `source ~/.local/bin/virtualenvwrapper.sh`, add `source ~/.local/bin` to `PATH`)
