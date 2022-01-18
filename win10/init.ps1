@@ -8,6 +8,4 @@ Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/ws
 .\wsl.msi /quiet
 
 wsl --set-default-version 2
-
-Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
-Add-AppxPackage .\Ubuntu.appx
+wsl --install -d Ubuntu-20.04
