@@ -15,3 +15,4 @@ winget install --silent 7zip.7zip
 winget install --silent "OneNote for Windows 10"
 winget install --silent "Microsoft To Do: Lists, Tasks & Reminders"
 winget install --silent DeepL
+winget install --silent Yandex.Music
