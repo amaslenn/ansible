@@ -12,3 +12,4 @@ winget install --silent "Visual Studio Enterprise"
 winget install --silent "Telegram Desktop"
 winget install --silent "Microsoft PowerToys"
 winget install --silent 7zip.7zip
+winget install --silent "OneNote for Windows 10"
