@@ -13,3 +13,4 @@ winget install --silent "Telegram Desktop"
 winget install --silent "Microsoft PowerToys"
 winget install --silent 7zip.7zip
 winget install --silent "OneNote for Windows 10"
+winget install --silent "Microsoft To Do: Lists, Tasks & Reminders"
