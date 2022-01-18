@@ -17,6 +17,7 @@ Install
 ./init.sh     # prepare to use Ansible
 ./setup <macos|linux> [<ansible parameters>]
 # ./setup linux --extra-vars user_name mandrey
+sudo chsh mandrey -s /usr/bin/zsh
 ```
 
 ## TODO
