@@ -1,0 +1,18 @@
+---
+- name: "Install software-properties-common"
+  apt:
+    name: software-properties-common
+    update_cache: yes
+  become: yes
+
+- name: "Add ppa:deadsnakes/ppa"
+  apt_repository:
+    repo: 'ppa:deadsnakes/ppa'
+  become: yes
+
+- name: "Install pythons"
+  package:
+    name: ["python{{item}}-dev", "python{{item}}-venv"]
+    state: present
+  loop: ["3.7", "3.9", "3.10"]
+  become: yes
