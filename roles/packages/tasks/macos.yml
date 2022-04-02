@@ -4,34 +4,24 @@
     name:
       - zsh
       - git
-      - hub
       - gh
       - ipython
       - tmux
-      - shellcheck
       - fzf
       - ripgrep
-      - jq
 
 - name: Install dev GUI apps
   homebrew_cask:
     name:
       - iterm2
-      - docker
-      - insomnia
       - visual-studio-code
     accept_external_apps: yes
 
 - name: Other tools & apps
   homebrew_cask:
     name:
-      # - ilya-birman-typography-layout — fails when already installed
-      - loom
+      - ilya-birman-typography-layout
       # - remembear — there is no cask for it :(
-      - slack
-      - zoomus
-      - transmission
-      - google-chrome
-      - keka
-      - dropbox
+      - zoom
+      - microsoft-edge
     accept_external_apps: yes
