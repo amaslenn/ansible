@@ -1,11 +1,11 @@
 #!/bin/bash -eE
 
-if [ "$EUID" -ne 0 ]; then
-    echo "Please restart with root permissions"
-    exit 1
-fi
-
 if [ -e /etc/os-release ]; then
+    if [ "$EUID" -ne 0 ]; then
+        echo "Please restart with root permissions"
+        exit 1
+    fi
+
     if grep -i redhat /etc/os-release; then
         yum install -y ansible
         exit 0
