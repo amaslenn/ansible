@@ -1,7 +1,9 @@
 ---
-- name: Add Microsoft Git repo
+- name: Add brew repos
   homebrew_tap:
-    name: microsoft/git
+    name:
+     - microsoft/git
+     - homebrew/cask-fonts
 
 - name: Install terminal apps
   homebrew:
@@ -13,6 +15,15 @@
       - tmux
       - fzf
       - ripgrep
+
+- name: Fonts
+  homebrew:
+    name:
+      - font-cascadia-code
+      - font-monofur-nerd-font
+      - font-inconsolata
+      - svn   # required for Source Code Pro
+      - font-source-code-pro
 
 - name: Install dev GUI apps
   homebrew_cask:
