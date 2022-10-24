@@ -1,10 +1,8 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
-    [
+    "actions": [
         {
-            "command":
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -19,8 +17,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -31,14 +28,11 @@
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             "bellStyle": "none"
         },
-        "list":
-        [
+        "list": [
             {
                 "commandline": "powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -61,22 +55,20 @@
                 "acrylicOpacity": 0.90000000000000002,
                 "cursorColor": "#AAAAAA",
                 "cursorShape": "filledBox",
-                "font":
-                {
+                "font": {
                     "face": "Cascadia Code PL",
                     "size": 12
                 },
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
-                "name": "Ubuntu-20.04",
+                "name": "Ubuntu-22.04",
                 "source": "Windows.Terminal.Wsl",
                 "startingDirectory": "/home/mandrey",
                 "useAcrylic": true
             }
         ]
     },
-    "schemes":
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
