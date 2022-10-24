@@ -4,9 +4,12 @@ winget install --interactive vscode
 winget install --silent Git.Git
 winget install --silent "Python 3.10"
 winget install --silent "GitHub Desktop"
+winget install --silent "Far Manager 3"
+winget install --silent "Beyond Compare 4"
 
 :: Microsoft
 winget install --silent "Visual Studio Enterprise"
+winget install --silent "Microsoft Azure CLI"
 
 :: other productivity (or not so much) tool
 winget install --silent "Telegram Desktop"
