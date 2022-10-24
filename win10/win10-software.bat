@@ -6,6 +6,7 @@ winget install --silent "Python 3.10"
 winget install --silent "GitHub Desktop"
 winget install --silent "Far Manager 3"
 winget install --silent "Beyond Compare 4"
+winget install --silent "VLC media player"
 
 :: Microsoft
 winget install --silent "Visual Studio Enterprise"
