@@ -9,7 +9,7 @@ winget install --silent "Beyond Compare 4"
 winget install --silent "VLC media player"
 
 :: Microsoft
-winget install --silent "Visual Studio Enterprise"
+winget install --silent "Visual Studio Enterprise 2022"
 winget install --silent "Microsoft Azure CLI"
 
 :: other productivity (or not so much) tool
