@@ -8,4 +8,4 @@ Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/ws
 .\wsl.msi /quiet
 
 wsl --set-default-version 2
-wsl --install -d Ubuntu-20.04
+wsl --install -d Ubuntu-22.04
