@@ -9,7 +9,7 @@ ssh-keygen -t rsa -b 4096 -C "email@example.com
 cat ~/.ssh/id_rsa.pub | clip.exe
 
 # use Windows' Git credential manager in WSL:
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 ```
 
 Install
@@ -26,4 +26,3 @@ sudo chsh mandrey -s /usr/bin/zsh
 - [ ] `sudo apt install python3-pip`  
       `sudo update-alternatives --install /usr/bin/pip pip $(realpath $(which pip3)) 1`  
       `update-alternatives --list pip`
-- [ ] Install `virtualenvwrapper` (`pip install virtualenvwrapper`, `source ~/.local/bin/virtualenvwrapper.sh`, add `source ~/.local/bin` to `PATH`)
