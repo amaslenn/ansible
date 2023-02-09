@@ -4,8 +4,4 @@ Enable-WindowsOptionalFeature -Online -NoRestart -All -FeatureName Microsoft-Hyp
 
 # reboot
 
-Invoke-WebRequest -Uri "https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" -OutFile wsl.msi
-.\wsl.msi /quiet
-
-wsl --set-default-version 2
 wsl --install -d Ubuntu-22.04
