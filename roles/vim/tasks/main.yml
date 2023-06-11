@@ -12,4 +12,4 @@
     dest: ~/.vim/autoload/plug.vim
 
 - name: Install Vim plugins
-  shell: vim +'PlugInstall --sync' +qa
+  shell: vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall

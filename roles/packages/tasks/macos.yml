@@ -35,9 +35,6 @@
 - name: Other tools & apps (cask)
   homebrew_cask:
     name:
-      - ilya-birman-typography-layout
-      # - remembear — there is no cask for it :(
-      - zoom
       - microsoft-edge
       - git-credential-manager-core
     accept_external_apps: yes
